@@ -197,7 +197,7 @@ PUBS = [
         "venue_text": "Journal of Image and Graphics, 2024",
         "citations": "98",
         "home_citations": "97",
-        "tags": ["award", "award2", "note"],
+        "tags": ["note", "award2", "award"],
         "links": [("PDF", "https://txtx.publish.founderss.cn/zh/article/doi/10.11834/jig.220422"), ("CODE", "https://github.com/Linfeng-Tang/Image-Fusion")],
     },
     {
@@ -350,7 +350,7 @@ def head(title, description, filename, lang):
 
 
 def header(active, filename, lang):
-    brand = "唐霖峰 · Linfeng Tang" if lang == "zh" else "Linfeng Tang (唐霖峰)"
+    brand = "唐霖峰 · Linfeng Tang" if lang == "zh" else "Linfeng Tang"
     mark = "唐" if lang == "zh" else "LT"
     items = []
     for nav_file, key in PAGES:
@@ -397,7 +397,39 @@ def authors_html(authors):
     return ", ".join(parts[:-1]) + f", and {parts[-1]}"
 
 
-def tag_label(tag, lang):
+CUSTOM_TAG_LABELS = {
+    "seafusion": {
+        "award": {
+            "zh": "Information Fusion 2024 年度唯一最佳论文奖",
+            "en": "Information Fusion 2024 Sole Best Paper Award",
+        },
+    },
+    "swinfusion": {
+        "award": {
+            "zh": "IEEE/CAA JAS 2023 钱学森论文奖",
+            "en": "IEEE/CAA JAS 2023 Hsue-shen Tsien Paper Award",
+        },
+    },
+    "survey": {
+        "note": {
+            "zh": "空天信息科技期刊高影响力论文",
+            "en": "High-Impact Paper in Aerospace Information Technology Journals",
+        },
+        "award2": {
+            "zh": "中国图象图形学报 2020-2024 优秀论文",
+            "en": "Journal of Image and Graphics 2020-2024 Excellent Paper",
+        },
+        "award": {
+            "zh": "中国图象图形学报 2024 年度优秀论文",
+            "en": "Journal of Image and Graphics 2024 Excellent Paper",
+        },
+    },
+}
+
+
+def tag_label(tag, lang, pub=None):
+    if pub and pub["id"] in CUSTOM_TAG_LABELS and tag in CUSTOM_TAG_LABELS[pub["id"]]:
+        return CUSTOM_TAG_LABELS[pub["id"]][tag][lang]
     labels = {
         "hot": {"zh": "ESI 热点论文", "en": "ESI Hot Paper"},
         "cited": {"zh": "ESI 高被引论文", "en": "ESI Highly Cited"},
@@ -419,7 +451,7 @@ def pub_item(pub, lang, compact=False):
     citation_label = f"引用 {citation_count}" if lang == "zh" else f"Citations {citation_count}"
     tag_html = [f'<span class="badge-citation">{escape(citation_label)}</span>']
     for tag in pub.get("tags", []):
-        tag_html.append(f'<span class="badge-{tag if tag != "award2" else "award"}">{escape(tag_label(tag, lang))}</span>')
+        tag_html.append(f'<span class="badge-{tag if tag != "award2" else "award"}">{escape(tag_label(tag, lang, pub))}</span>')
     links = []
     for label, url in pub["links"]:
         text = {"PDF": "论文", "CODE": "代码"}.get(label, label) if lang == "zh" else {"CODE": "Code"}.get(label, label)
@@ -472,7 +504,7 @@ def page_home(lang):
         research_title = "研究方向"
         focus = [
             ("多模图像融合", "面向红外-可见光图像融合、视频融合、可控融合、配准-融合联合建模，以及通用图像融合。"),
-            ("多模图像复原", "利用多模图像互补信息，研究退化感知复原、统一融合-复原框架，以及基于扩散模型的图像复原。"),
+            ("多模图像复原", "利用多模图像互补信息，研究退化感知复原，以及统一融合-复原框架。"),
             ("高低层视觉协同优化", "探索视觉-语义协同优化策略，以及服务于高层视觉任务的语义感知图像融合模型。"),
         ]
         rep_title = "代表性论文"
@@ -480,10 +512,10 @@ def page_home(lang):
         latest = "最新动态"
         footer_text = "中文个人学术主页。"
     else:
-        title = "Linfeng Tang (唐霖峰) | Academic Homepage"
+        title = "Linfeng Tang | Academic Homepage"
         desc = "Academic homepage of Linfeng Tang."
         eyebrow = "Academic Homepage"
-        h1 = "Linfeng Tang (唐霖峰)"
+        h1 = "Linfeng Tang"
         en_name = ""
         subtitle = "Hongyi Postdoctoral Fellow at Wuhan University - Advisor: Prof. Jiayi Ma"
         summary = "I received my Ph.D. degree from the School of Electronic Information, Wuhan University in December 2025 and my B.S. degree from the School of Computer Science and Engineering, Central South University in June 2020. My research focuses on multi-source image fusion perception, including multi-modal image fusion, video fusion, image restoration, image matching, and semantics-aware image fusion. In the past five years, I have published 16 papers as first author, advisor-first-author, or co-first author, including 15 high-level papers in CAS Q1 journals, IEEE Transactions, and CCF-A venues. These papers include 6 ESI Hot Papers (top 0.1%) and 7 ESI Highly Cited Papers (top 1%). My Google Scholar citations exceed 6,900, with an h-index of 21; 3 papers have over 1,000 citations, and the highest-cited paper has 1,416 citations."
@@ -495,7 +527,7 @@ def page_home(lang):
         research_title = "Research Focus"
         focus = [
             ("Multi-modal Image Fusion", "Infrared-visible image fusion, video fusion, controllable fusion, registration-fusion joint modeling, and general image fusion."),
-            ("Multi-modal Image Restoration", "Restoration for infrared-visible images by exploiting complementary multi-modal information, including degradation-aware restoration, unified fusion-restoration frameworks, and diffusion-based image restoration."),
+            ("Multi-modal Image Restoration", "Image restoration with complementary multi-modal information, focusing on degradation-aware restoration and unified fusion-restoration frameworks."),
             ("High-Low Level Vision Co-optimization", "Visual-semantic co-optimization strategies and semantics-aware image fusion models designed for high-level vision tasks."),
         ]
         rep_title = "Representative Publications"
@@ -525,7 +557,6 @@ def page_home(lang):
           <div class="portrait-affiliation">{aff_html}</div>
         </div>
         <div>
-          <span class="eyebrow">{escape(eyebrow)}</span>
           <h1>{escape(h1)}</h1>
           {en_name}
           <div class="subtitle">{escape(subtitle)}</div>
@@ -579,7 +610,7 @@ def page_home(lang):
 
 
 def page_publications(lang):
-    title = "唐霖峰 | 论文" if lang == "zh" else "Linfeng Tang (唐霖峰) | Publications"
+    title = "唐霖峰 | 论文" if lang == "zh" else "Linfeng Tang | Publications"
     desc = "唐霖峰完整论文列表。" if lang == "zh" else "Complete publication list of Linfeng Tang."
     h1 = "论文" if lang == "zh" else "Publications"
     p = "按时间倒序整理的论文列表。" if lang == "zh" else "Publications in reverse chronological order."
@@ -632,7 +663,7 @@ def page_publications(lang):
 
 
 def page_news(lang):
-    title = "唐霖峰 | 动态" if lang == "zh" else "Linfeng Tang (唐霖峰) | News"
+    title = "唐霖峰 | 动态" if lang == "zh" else "Linfeng Tang | News"
     desc = "唐霖峰近期动态。" if lang == "zh" else "Recent news of Linfeng Tang."
     h1 = "动态" if lang == "zh" else "News"
     p = "根据当前主页记录整理的近期动态。" if lang == "zh" else "Selected updates based on the current homepage records."
@@ -661,7 +692,7 @@ def page_news(lang):
 
 
 def page_honors(lang):
-    title = "唐霖峰 | 荣誉" if lang == "zh" else "Linfeng Tang (唐霖峰) | Honors"
+    title = "唐霖峰 | 荣誉" if lang == "zh" else "Linfeng Tang | Honors"
     desc = "唐霖峰的荣誉、奖励与奖学金。" if lang == "zh" else "Honors, awards, and scholarships of Linfeng Tang."
     h1 = "荣誉" if lang == "zh" else "Honors"
     p = "荣誉、奖励与奖学金列表。" if lang == "zh" else "A list of honors, awards, and scholarships."
@@ -713,7 +744,7 @@ def page_services(lang):
         c_note = "服务于计算机视觉、机器学习、多媒体与人工智能相关顶级会议。"
         footer_text = "学术服务页面。"
     else:
-        title = "Linfeng Tang (唐霖峰) | Services"
+        title = "Linfeng Tang | Services"
         desc = "Academic services and reviewing activities of Linfeng Tang."
         eyebrow = "Academic Services"
         h1 = "Academic Services"
@@ -799,7 +830,7 @@ def page_contact(lang):
         qr_note = "欢迎通过邮箱或微信联系我，学术合作与交流都很欢迎。"
         footer_text = "联系方式。"
     else:
-        title = "Linfeng Tang (唐霖峰) | Contact"
+        title = "Linfeng Tang | Contact"
         desc = "Contact information and academic collaboration channels of Linfeng Tang."
         eyebrow = "Contact"
         h1 = "Contact"
