@@ -462,18 +462,18 @@ def page_home(lang):
         eyebrow = "个人学术主页"
         h1 = "唐霖峰"
         en_name = '<div class="en-name">Linfeng Tang</div>'
-        subtitle = "武汉大学博士后 · 合作导师：马佳义教授"
-        summary = "我于 2025 年 12 月在武汉大学获得博士学位，于 2020 年在中南大学获得学士学位。研究方向主要包括多模态图像融合、视频融合、低照度图像增强、图像恢复，以及语义感知建模。"
-        aff = ["机器人学院", "武汉大学", "博士后研究员", "合作导师：马佳义教授", "武汉，中国 430072"]
-        chips = ["计算机视觉", "图像融合", "视频融合", "图像增强", "语义感知"]
-        actions = [("Google Scholar", "https://scholar.google.com/citations?user=PyRqpAsAAAAJ&hl=zh-CN", "btn"), ("GitHub", "https://github.com/Linfeng-Tang", "btn-blue"), ("论文列表", "./publications.html", "btn-gold"), ("学术服务", "./services.html", "btn-neutral")]
+        subtitle = "武汉大学弘毅博士后 · 合作导师：马佳义教授"
+        summary = "于 2025 年 12 月在武汉大学·电子信息学院获得博士学位，于 2020 年 6 月在中南大学·计算机学院获得学士学位。研究方向为多源图像融合感知，主要包括多模图像融合、视频融合、图像复原、图像匹配，以及语义感知驱动的图像融合。近五年以第一作者（导师第一或共同第一）发表学术论文 16 篇，包含中科院一区、IEEE Trans、CCF A 等高水平论文 15 篇，其中 ESI 热点论文（前 0.1%）6 篇，ESI 高被引论文（前 1%）7 篇；谷歌学术引用 6900 余次，H 指数 21，3 篇引用超过 1000 次，单篇引用最高 1416 次。"
+        aff = ["机器人学院", "武汉大学", "弘毅博士后", "合作导师：马佳义教授", "武汉，中国 430072"]
+        chips = ["多模图像融合", "视频融合", "图像复原", "图像匹配", "语义感知"]
+        actions = [("谷歌学术", "https://scholar.google.com/citations?user=PyRqpAsAAAAJ&hl=zh-CN", "btn"), ("GitHub", "https://github.com/Linfeng-Tang", "btn-blue"), ("论文列表", "./publications.html", "btn-gold"), ("学术服务", "./services.html", "btn-neutral")]
         highlights_title = "亮点"
-        highlights = ["World's Top 2% Scientists, 2025", "NeurIPS 2025 口头报告", "中国图象图形学报 2020-2024 优秀论文，2025", "Information Fusion 2024 最佳论文奖", "中国图象图形学报 2024 年度优秀论文", "IEEE/CAA JAS 钱学森论文奖，2023", "6 篇 ESI 热点论文", "7 篇 ESI 高被引论文"]
+        highlights = ["World's Top 2% Scientists, 2025", "NeurIPS 2025 口头报告", "Information Fusion 2024 年度唯一最佳论文奖", "中国图象图形学报 2024 年度优秀论文，2024", "中国图象图形学报 2020-2024 优秀论文，2025", "IEEE/CAA JAS 钱学森论文奖，2023", "6 篇 ESI 热点论文", "7 篇 ESI 高被引论文"]
         research_title = "研究方向"
         focus = [
-            ("多模态融合", "面向红外-可见光图像融合、视频融合、可控融合，以及配准-融合联合建模。"),
-            ("图像增强与恢复", "研究低照度增强、退化感知恢复，以及基于扩散模型的图像复原方法。"),
-            ("任务驱动感知", "探索语义引导、语言-视觉先验，以及服务于高层视觉任务的图像融合模型。"),
+            ("多模图像融合", "面向红外-可见光图像融合、视频融合、可控融合、配准-融合联合建模，以及通用图像融合。"),
+            ("多模图像复原", "面向红外-可见光图像，结合多模图像互补信息，研究退化感知复原、统一融合-复原框架，以及基于扩散模型的图像复原方法。"),
+            ("高低层视觉协同优化", "探索视觉-语义协同优化策略，以及服务于高层视觉任务的语义感知图像融合模型。"),
         ]
         rep_title = "代表性论文"
         view_all = "查看全部"
@@ -485,18 +485,18 @@ def page_home(lang):
         eyebrow = "Academic Homepage"
         h1 = "Linfeng Tang (唐霖峰)"
         en_name = ""
-        subtitle = "Postdoctoral Researcher at Wuhan University - Advisor: Prof. Jiayi Ma"
-        summary = "I received my Ph.D. degree from Wuhan University in December 2025 and my B.S. degree from Central South University in 2020. My research interests include multi-modal image fusion, video fusion, low-light image enhancement, image restoration, and semantics-aware modeling."
-        aff = ["School of Robotics", "Wuhan University", "Postdoctoral Researcher", "Advisor: Prof. Jiayi Ma", "Wuhan, 430072, China"]
-        chips = ["Computer Vision", "Image Fusion", "Video Fusion", "Image Enhancement", "Semantics-aware Perception"]
+        subtitle = "Hongyi Postdoctoral Fellow at Wuhan University - Advisor: Prof. Jiayi Ma"
+        summary = "I received my Ph.D. degree from the School of Electronic Information, Wuhan University in December 2025 and my B.S. degree from the School of Computer Science and Engineering, Central South University in June 2020. My research focuses on multi-source image fusion perception, including multi-modal image fusion, video fusion, image restoration, image matching, and semantics-aware image fusion. In the past five years, I have published 16 papers as first author, advisor-first-author, or co-first author, including 15 high-level papers in CAS Q1 journals, IEEE Transactions, and CCF-A venues. These papers include 6 ESI Hot Papers (top 0.1%) and 7 ESI Highly Cited Papers (top 1%). My Google Scholar citations exceed 6,900, with an h-index of 21; 3 papers have over 1,000 citations, and the highest-cited paper has 1,416 citations."
+        aff = ["School of Robotics", "Wuhan University", "Hongyi Postdoctoral Fellow", "Advisor: Prof. Jiayi Ma", "Wuhan, 430072, China"]
+        chips = ["Multi-modal Fusion", "Video Fusion", "Image Restoration", "Image Matching", "Semantic Perception"]
         actions = [("Google Scholar", "https://scholar.google.com/citations?user=PyRqpAsAAAAJ&hl=zh-CN", "btn"), ("GitHub", "https://github.com/Linfeng-Tang", "btn-blue"), ("Publications", "./publications.html", "btn-gold"), ("Services", "./services.html", "btn-neutral")]
         highlights_title = "Highlights"
-        highlights = ["World's Top 2% Scientists, 2025", "NeurIPS 2025 Oral", "Journal of Image and Graphics 2020-2024 Excellent Paper, 2025", "Information Fusion Best Paper Award, 2024", "Journal of Image and Graphics 2024 Excellent Paper", "Hsue-shen Tsien Paper Award, 2023", "6 ESI Hot Papers", "7 ESI Highly Cited Papers"]
+        highlights = ["World's Top 2% Scientists, 2025", "NeurIPS 2025 Oral", "Information Fusion 2024 Sole Best Paper Award", "Journal of Image and Graphics 2024 Excellent Paper, 2024", "Journal of Image and Graphics 2020-2024 Excellent Paper, 2025", "Hsue-shen Tsien Paper Award, 2023", "6 ESI Hot Papers", "7 ESI Highly Cited Papers"]
         research_title = "Research Focus"
         focus = [
-            ("Multi-modal Fusion", "Infrared-visible image fusion, video fusion, controllable fusion, and registration-fusion joint modeling."),
-            ("Enhancement and Restoration", "Low-light enhancement, degradation-aware restoration, and diffusion-based image recovery."),
-            ("Task-driven Perception", "Semantic guidance, language-vision priors, and image fusion models designed for downstream high-level vision tasks."),
+            ("Multi-modal Image Fusion", "Infrared-visible image fusion, video fusion, controllable fusion, registration-fusion joint modeling, and general image fusion."),
+            ("Multi-modal Image Restoration", "Restoration for infrared-visible images by exploiting complementary multi-modal information, including degradation-aware restoration, unified fusion-restoration frameworks, and diffusion-based image restoration."),
+            ("High-Low Level Vision Co-optimization", "Visual-semantic co-optimization strategies and semantics-aware image fusion models designed for high-level vision tasks."),
         ]
         rep_title = "Representative Publications"
         view_all = "View All"

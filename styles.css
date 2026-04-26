@@ -302,6 +302,23 @@ h3 {
 .actions { margin-top: 18px; }
 .stats { margin-top: 22px; }
 
+.hero-main .actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hero-main .actions a {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 12px;
+  white-space: nowrap;
+}
+
+html[lang="en"] .hero-main .actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .chip {
   padding: 8px 12px;
   border-radius: 999px;
@@ -422,6 +439,18 @@ h3 {
 
 .info-card .compact-list li {
   margin: 6px 0;
+}
+
+.info-card .compact-badges {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.info-card .compact-badges span {
+  width: 100%;
+  border-radius: 14px;
+  line-height: 1.45;
 }
 
 .stats .stat {
@@ -1130,6 +1159,10 @@ h3 {
 
   .hero-main {
     grid-template-columns: 1fr;
+  }
+
+  .hero-main .actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portrait {
