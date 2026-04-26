@@ -79,8 +79,8 @@ img { display: block; max-width: 100%; }
   display: grid;
   place-items: center;
   color: #fffdfa;
-  background: linear-gradient(135deg, #e9a0a7, var(--rednote-deep));
-  box-shadow: 0 10px 24px rgba(166, 77, 89, 0.18);
+  background: linear-gradient(135deg, #91b8e3, var(--blue-deep));
+  box-shadow: 0 10px 24px rgba(93, 132, 177, 0.2);
 }
 
 .nav {
@@ -493,11 +493,11 @@ h3 {
   min-height: 38px;
   padding: 0 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #e8a0a8, #b95f6b);
+  background: linear-gradient(135deg, #9cc2ea, #6e99c7);
   color: #fff;
   font-weight: 800;
   font-size: 15px;
-  box-shadow: 0 10px 20px rgba(166, 77, 89, 0.15);
+  box-shadow: 0 10px 20px rgba(93, 132, 177, 0.18);
 }
 
 .pub-thumb {
