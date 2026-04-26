@@ -671,7 +671,11 @@ html[lang="en"] .summary {
 }
 
 .pub-highlights .badge-award::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%238a6835' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 21h8'/%3E%3Cpath d='M12 17v4'/%3E%3Cpath d='M7 4h10v5a5 5 0 0 1-10 0V4Z'/%3E%3Cpath d='M7 7H4a3 3 0 0 0 3 3'/%3E%3Cpath d='M17 7h3a3 3 0 0 1-3 3'/%3E%3Cpath d='M9 17h6'/%3E%3C/svg%3E");
+  width: 21px;
+  height: 21px;
+  flex-basis: 21px;
+  background-size: 21px 21px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10.5' fill='%23fff1c9'/%3E%3Cpath fill='%23d59a2f' d='M8 4.5h8v3.1h3.1v1.7a4.2 4.2 0 0 1-4.2 4.2 4.8 4.8 0 0 1-2 1.4v2.2h3.3v2H7.8v-2h3.3v-2.2a4.8 4.8 0 0 1-2-1.4 4.2 4.2 0 0 1-4.2-4.2V7.6H8V4.5Zm0 4.8H6.7a2.3 2.3 0 0 0 1.7 2.2A7.1 7.1 0 0 1 8 9.3Zm8 0c0 .8-.1 1.5-.4 2.2a2.3 2.3 0 0 0 1.7-2.2H16Z'/%3E%3Cpath fill='%23fff8df' d='M10.3 6.5h3.4l-.8 1.7 1.8.2-1.4 1.2.4 1.8-1.7-.9-1.7.9.4-1.8-1.4-1.2 1.8-.2-.8-1.7Z'/%3E%3Cpath fill='%23976f27' opacity='.2' d='M8 4.5h8v1.4H8zM7.8 17.1h8.4v2H7.8z'/%3E%3C/svg%3E");
 }
 
 .pub-highlights .badge-note::before {

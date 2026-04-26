@@ -2,7 +2,7 @@ from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parents[1]
-STYLE_VERSION = "20260426-icons"
+STYLE_VERSION = "20260426-award-icon"
 
 PAGES = [
     ("index.html", "about"),
